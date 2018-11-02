@@ -1,0 +1,197 @@
+<style>
+	@font-face{
+        font-family:Futura;
+        src:url(Futura%20Book%20Regular.otf);
+    }
+    /*@font-face{
+        font-family:FontAwesome;
+        src:url(FontAwesome.otf);
+    }*/
+    @font-face{
+        font-family:Archia;
+        src:url(Archia-regular.woff2);
+    }
+	html, body{
+		padding:0; margin:0;
+		height:100%; width:100%;
+		background-color:#2B2E39;
+		overflow-x: hidden !important;
+		color:white;
+	}
+
+	*{transition: all 0.2s ease-in-out;}
+
+	/*.site-wrapper{min-height: 100vh; height: 100vh; display: block;}*/
+	.content-wrapper{
+		display:flex;
+		flex-flow: row nowrap;
+		max-width:100vw;
+		min-height: calc(100% - 40px);
+	}
+
+	.nav-status{
+		width:100%;
+		background-color: #383c4a;
+		color:white;
+		font-size:13px;
+		font-family: monospace;
+		padding:1.25px  5px;
+	}
+
+	.panel-wrapper-group{
+		display:flex;
+		flex-flow:column;
+	}
+	.panel-wrapper{
+		display: flex;
+		flex-flow: row nowrap;
+		min-height: calc(100% - 35px);
+	}
+	.search{
+		border:none;
+		padding:7px;
+		line-height: 22px;
+		background-color: #2B2E39; /*white for dark theme*/
+		color: white; /*#2B2E39 for dark theme*/
+	}
+	.panel{
+	  	font-family:'Roboto', sans-serif;
+		min-width:250px;
+		max-width:250px;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		white-space: normal;
+	}
+	.archive{background-color: #383c4a;}
+	.nav-left{background-color: #404551;/*#E1E1E1 — White Theme*/ position:relative;}
+
+	.section-nav{margin-top:20px; position:fixed;}
+	.toc-entry{
+		margin-left:-40px;
+		list-style-type: none;
+		width:250px;
+	}
+	.toc-entry:first-child{
+		min-width:250px;
+	}
+	.list, .toc-entry a{
+		/*color:#363636; /*#4b5162*/
+		color:white; /*Dark Theme*/
+		display: block;
+		text-decoration:none;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		overflow: hidden;
+		padding:7.5px 5px 7.5px 15px;
+	}
+	.selected{background-color:#5294e2; color:white;}
+	.list:hover, .toc-entry a:hover{
+		color:white;
+		background-color:#5294e2; /*#D0D0D0 — White Theme*/
+	}
+	.list::before, .toc-entry a::before{
+		content: "# ";
+		color:#5294e2;
+		margin-right:5px;
+	}
+	.list:hover::before, .toc-entry a:hover::before{
+		color:white;
+	}
+	.list:first-of-type{
+		margin-top:20px;
+	}
+
+	.older-newer{
+		font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+		color:#3273dc;
+		text-decoration:none;
+		border-radius:4px;
+		padding:4px 6px;
+	}
+	.older-newer:hover{
+		color:#4a4a4a;
+		background-color:#EEEEEE;
+	}
+	.older-newer:last-of-type{
+		float: right;
+		margin-top:-4px;
+	}
+
+	.body-wrapper{
+		width:100%;
+		background-color:white; /*#2B2E39 dark theme*/
+	}
+	.body{
+		padding:10px 95px;
+		max-width: 630px; overflow:auto; white-space:normal;
+	}
+	.body-content{max-width:630px; color:#272b35; font-family:'Roboto', sans-serif;}
+
+	.date{
+		color:gray;
+		margin-bottom: 15px;
+	}
+
+	h1, h2, h3, h4, h5{
+		font-family:-apple-system, BlinkMacSystemFont, San Francisco, Roboto, Segoe UI, Helvetica, Helvetica Neue, sans-serif;
+		font-weight:500;
+		color:#383c4a;
+		/*color:#2D2D2D;*/
+	}
+	h1::before, h2::before, h3::before, h4::before{
+		content: "\f0c1 ";
+		font-family: "Font Awesome 5 Free";
+		font-weight: 900;
+		font-size:27px;
+		padding-right: 15px;
+		margin-left:-45px;
+		opacity:0.2;
+		vertical-align: middle;
+		color:#5294e2;
+		transition: opacity .3s ease;
+	}
+	h1:hover:before, h2:hover:before, h3:hover:before, h4:hover:before{opacity:1;}
+
+	h1{font-size:50px; font-family:'Futura', sans-serif;}
+	h2{font-size:40px;}
+	h3{font-size:30px;}
+	h4{font-size:20px;}
+
+	img{
+		width:100%;
+		max-height:630px;
+		overflow:scroll;
+		border-radius:15px;
+	}
+
+
+
+	@media screen and (max-width: 1025px) {
+		.content-wrapper{
+			justify-content: center;
+		}
+		.body{margin: 0 auto;}
+		.panel-wrapper{min-height: 0;}
+		.panel{
+			min-height: 20px;
+			height: 100%;
+			width:100%;
+			max-width: 100%;
+		}
+		.content-wrapper{
+			display:flex;
+			flex-flow: column nowrap;
+		}
+		.section-nav{position: relative;}
+		.toc-entry{width: auto}
+	}
+
+	@media screen and (max-width: 560px) {
+		.body{
+			padding:10px 50px 10px 75px;
+		}	
+		.link::before{
+			margin-left:-55px;
+		}
+	}
+</style>

@@ -1,0 +1,27 @@
+---
+layout: default
+toc: true
+---
+
+<div class="nav-status">{{ page.url }}</div>
+<div class="content-wrapper">
+  {% include sidebar.html %}
+  <div class="body-wrapper">
+    <div class="body">
+      <div style="width: 100%;">
+        <a class="older-newer" href="{{page.previous.url}}">← {{page.previous.title | truncate: 30}}</a>
+        <a class="older-newer" href="{{page.next.url}}">{{page.next.title | truncate: 30}} →</a>
+      </div>
+      <h1>{{ page.title }}</h1>
+      <div class="body-content">
+        <p class="date"><i class="far fa-clock"></i> Written on {{ page.date | date: "%Y-%m-%d" }} by Bennett Diamond</p>
+        {{ content }}
+        <div style="width: 100%;">
+          <a class="older-newer" href="{{page.previous.url}}">← {{page.previous.title}}</a>
+          <a class="older-newer" href="{{page.next.url}}">{{page.next.title}} →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="nav-status">&copy; Bennett Diamond 2018. All rights reserved.</div>

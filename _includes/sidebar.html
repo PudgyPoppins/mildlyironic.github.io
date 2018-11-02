@@ -1,0 +1,13 @@
+<div class="panel-wrapper-group">
+  <input type="text" placeholder="search" class="search">
+  <div class="panel-wrapper">
+    <div class="panel archive">
+      {%- for post in site.posts -%}
+      <a class="list" href="{{ post.url }}">{{ post.title }}</a>
+      {%- endfor -%}
+    </div>
+    <div class="panel nav-left">
+      {{ content | toc_only }}
+    </div>
+  </div>
+</div>
